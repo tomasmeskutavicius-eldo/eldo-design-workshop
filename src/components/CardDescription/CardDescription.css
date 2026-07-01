@@ -178,6 +178,10 @@
   padding-bottom: var(--spacing-6);
 }
 
+.card-description__description-inner--expanded {
+  padding-bottom: 0;
+}
+
 .card-description__description-title {
   margin: 0 0 var(--spacing-2);
   font-size: 16px;
@@ -220,6 +224,18 @@
   cursor: pointer;
 }
 
+.card-description__view-full--expanded {
+  position: static;
+  height: auto;
+  margin-top: var(--spacing-3);
+  padding: 0;
+  background: none;
+}
+
+.card-description__view-full--expanded .card-description__view-full-icon {
+  transform: rotate(180deg);
+}
+
 .card-description__view-full-text {
   font-size: 14px;
   font-weight: 700;
@@ -232,6 +248,7 @@
   flex-shrink: 0;
   width: 24px;
   height: 24px;
+  transition: transform 0.2s ease;
 }
 
 .card-description__view-full-icon img {

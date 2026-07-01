@@ -1,3 +1,4 @@
+import { useState } from "react";
 import avatarImage from "../../assets/card-description/avatar.png";
 import badgeIcon from "../../assets/card-description/badge.svg";
 import chevronDownIcon from "../../assets/card-description/chevron-down.svg";
@@ -12,8 +13,9 @@ export type CardDescriptionProps = {
   reviewCount?: string;
   instructionsTitle?: string;
   instructions?: string[];
+  fullInstructions?: string[];
   onReviewsClick?: () => void;
-  onViewFullInstructions?: () => void;
+  onToggleInstructions?: (expanded: boolean) => void;
 };
 
 const defaultInstructions = [
@@ -21,6 +23,20 @@ const defaultInstructions = [
   "⏱ 24/7 Online Services",
   "⚡ Safe & Fast Delivery",
   "----------------------------------------------------",
+];
+
+const defaultFullInstructions = [
+  "Fortnite V-Bucks Top-Up – 100% Safe 🔥",
+  "",
+  "✨4500 Vbucks ✨",
+  "",
+  "Delivered through Xbox Store or Epic Games Store !",
+  "",
+  "❗ Upon ordering, provide Epic Games information. ❗",
+  "",
+  "❗ If delivered through Xbox, i'll link my xbox account to your epic, if delivered through Epic Games Store, i'll change region . Once changed, you will not be able to change it back for the next 6 months and you will not be able to purchase anything without me. ❗",
+  "",
+  "❗ If you ask Epic to change region back, they will refund",
 ];
 
 export function CardDescription({
@@ -31,9 +47,22 @@ export function CardDescription({
   reviewCount = "4,088 reviews",
   instructionsTitle = "Delivery instructions",
   instructions = defaultInstructions,
+  fullInstructions = defaultFullInstructions,
   onReviewsClick,
-  onViewFullInstructions,
+  onToggleInstructions,
 }: CardDescriptionProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggleInstructions = () => {
+    const nextExpanded = !isExpanded;
+    setIsExpanded(nextExpanded);
+    onToggleInstructions?.(nextExpanded);
+  };
+
+  const visibleInstructions = isExpanded
+    ? [...instructions, ...fullInstructions]
+    : instructions;
+
   return (
     <article className="card-description" data-name="card description">
       <header className="card-description__label">
@@ -75,24 +104,33 @@ export function CardDescription({
       </section>
 
       <section className="card-description__description">
-        <div className="card-description__description-inner">
+        <div
+          className={`card-description__description-inner${
+            isExpanded ? " card-description__description-inner--expanded" : ""
+          }`}
+        >
           <h3 className="card-description__description-title">
             {instructionsTitle}
           </h3>
 
           <div className="card-description__description-content">
-            {instructions.map((line) => (
-              <p key={line}>{line}</p>
+            {visibleInstructions.map((line, index) => (
+              <p key={`${index}-${line}`}>
+                {line === "" ? "\u00A0" : line}
+              </p>
             ))}
           </div>
 
           <button
             type="button"
-            className="card-description__view-full"
-            onClick={onViewFullInstructions}
+            className={`card-description__view-full${
+              isExpanded ? " card-description__view-full--expanded" : ""
+            }`}
+            onClick={handleToggleInstructions}
+            aria-expanded={isExpanded}
           >
             <span className="card-description__view-full-text">
-              View full instructions
+              {isExpanded ? "Show less" : "View full instructions"}
             </span>
             <span className="card-description__view-full-icon" aria-hidden="true">
               <img src={chevronDownIcon} alt="" />
