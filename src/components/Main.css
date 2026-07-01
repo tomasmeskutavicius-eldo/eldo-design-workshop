@@ -4,5 +4,5 @@ main {
 
 main p {
   margin: 0;
-  color: #444;
+  color: var(--color-text-secondary);
 }

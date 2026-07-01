@@ -1,0 +1,106 @@
+.product-navigation {
+  --spacing-2: 8px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --radius-lg: 8px;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  background: var(--color-bg-alt);
+  box-shadow: var(--shadow-header);
+  font-family: "Lato", system-ui, sans-serif;
+}
+
+.product-navigation__inner {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-4);
+  align-items: center;
+  max-width: 1140px;
+  min-width: 0;
+  padding: 0 var(--spacing-6);
+}
+
+.product-navigation__game {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-2);
+  align-items: center;
+  min-width: 0;
+  height: 40px;
+}
+
+.product-navigation__game-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.product-navigation__game-title {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-text-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.product-navigation__tabs {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.product-navigation__tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 10px 0;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.product-navigation__tab:hover {
+  opacity: 0.8;
+}
+
+.product-navigation__tab--active {
+  border-bottom: 2px solid var(--color-tab-active);
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.product-navigation__tab-glow {
+  position: absolute;
+  inset: 0 0 -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.product-navigation__tab-glow img {
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1) rotate(180deg);
+}
+
+.product-navigation__spacer {
+  flex: 1;
+  min-width: 0;
+  height: 56px;
+}
