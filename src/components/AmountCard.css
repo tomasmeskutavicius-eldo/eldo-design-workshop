@@ -1,0 +1,128 @@
+.amount-card {
+  --amount-card-bg: #ffffff;
+  --amount-card-border: #e7e7e7;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  width: 143px;
+  min-height: 192px;
+  padding: 10px;
+  border: 1px solid var(--amount-card-border);
+  border-radius: 8px;
+  background: var(--amount-card-bg);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.amount-card:hover:not(.amount-card--selected) {
+  border-color: #d0d0d0;
+}
+
+.amount-card--selected {
+  --amount-card-border: #ffc950;
+  border-width: 2px;
+  background:
+    linear-gradient(90deg, rgba(255, 201, 80, 0.16), rgba(255, 201, 80, 0.16)),
+    #ffffff;
+}
+
+.amount-card__check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #ffc950;
+  color: #14131a;
+}
+
+.amount-card__top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.amount-card__icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.amount-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.amount-card__amount {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #14131a;
+}
+
+.amount-card__amount--bold {
+  font-weight: 700;
+}
+
+.amount-card__product {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6a667b;
+}
+
+.amount-card__pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.amount-card__original-price {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6a667b;
+  text-decoration: line-through;
+}
+
+.amount-card__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.amount-card__price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #367506;
+  white-space: nowrap;
+}
+
+.amount-card__discount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: rgba(209, 240, 143, 0.2);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #367506;
+  white-space: nowrap;
+}

@@ -1,3 +1,4 @@
+import { AmountSelector } from "./AmountSelector";
 import { GameRegionSelector } from "./GameRegionSelector";
 import "./Main.css";
 
@@ -8,6 +9,7 @@ export function Main() {
         defaultValue="EU"
         onChange={(region) => console.log(region)}
       />
+      <AmountSelector />
     </main>
   );
 }
