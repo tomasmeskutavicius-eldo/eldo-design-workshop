@@ -1,6 +1,7 @@
 import { AmountSelector } from "./AmountSelector";
 import { GameRegionSelector } from "./GameRegionSelector";
 import { TopUpsSellersList } from "./TopUpsSellersList";
+import { TopUpCard } from "./TopUpCard/TopUpCard";
 import { useThemeCopy } from "./theme/useThemeCopy";
 import "./Main.css";
 
@@ -33,7 +34,7 @@ export function Main() {
           </div>
 
           <aside className="main__sidebar">
-            <MissingComponent label="component missing" className="main__missing--checkout" />
+            <TopUpCard />
             <MissingComponent label="component missing" className="main__missing--seller" />
           </aside>
         </div>
