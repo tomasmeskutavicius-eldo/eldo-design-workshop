@@ -1,20 +1,12 @@
 .top-up-card {
-  --background-base1: #ffffff;
-  --divider-border: #e7e7e7;
-  --text-primary: #14131a;
-  --text-secondary: #6a667b;
-  --chip-price-bg: rgba(209, 240, 143, 0.2);
-  --chip-price-text-green: #367506;
-  --button-primary-bg: #222127;
-  --button-primary-text: #ffffff;
+  --top-up-buy-bg: #222127;
+  --top-up-buy-text: #ffffff;
   --corner-medium: 8px;
   --corner-rounded: 4px;
 
-  background: var(--background-base1);
+  background: var(--color-card-bg);
   border-radius: var(--corner-medium);
-  box-shadow:
-    0 2px 4px rgba(9, 9, 11, 0.05),
-    0 12px 8px rgba(9, 9, 11, 0.02);
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -22,7 +14,7 @@
 }
 
 .top-up-card__section {
-  border-bottom: 1px solid var(--divider-border);
+  border-bottom: 1px solid var(--color-border);
   padding: 12px 24px;
 }
 
@@ -42,7 +34,7 @@
 }
 
 .top-up-card__product-name {
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   flex: 1;
   font-size: 16px;
   font-weight: 700;
@@ -58,7 +50,7 @@
 }
 
 .top-up-card__label {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -66,7 +58,7 @@
 }
 
 .top-up-card__value {
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
@@ -90,7 +82,7 @@
 }
 
 .top-up-card__original-price {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -107,9 +99,9 @@
 
 .top-up-card__discount-chip {
   align-items: center;
-  background: var(--chip-price-bg);
+  background: var(--color-price-badge-bg);
   border-radius: var(--corner-rounded);
-  color: var(--chip-price-text-green);
+  color: var(--color-price);
   display: inline-flex;
   font-size: 12px;
   font-weight: 700;
@@ -119,19 +111,24 @@
 }
 
 .top-up-card__sale-price {
-  color: var(--chip-price-text-green);
+  color: var(--color-price);
   font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
   margin: 0;
 }
 
+html[data-theme="dark"] .top-up-card {
+  --top-up-buy-bg: #ffffff;
+  --top-up-buy-text: #14131a;
+}
+
 .top-up-card__buy-button {
   align-items: center;
-  background: var(--button-primary-bg);
+  background-color: var(--top-up-buy-bg);
   border: none;
   border-radius: var(--corner-medium);
-  color: var(--button-primary-text);
+  color: var(--top-up-buy-text);
   cursor: pointer;
   display: flex;
   font-family: inherit;
@@ -186,7 +183,7 @@
 }
 
 .top-up-card__usp-primary {
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
@@ -194,7 +191,7 @@
 }
 
 .top-up-card__usp-secondary {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
