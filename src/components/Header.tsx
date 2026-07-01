@@ -10,14 +10,17 @@ import sunIcon from "./assets/header/sun.svg";
 import supportIcon from "./assets/header/support.svg";
 import switchIcon from "./assets/header/switch.svg";
 import userAvatar from "./assets/header/user-avatar.png";
+import { useThemeCopy } from "./theme/useThemeCopy";
 import { useTheme } from "./theme/ThemeProvider";
 
 const NAV_ITEMS = ["Currency", "Accounts", "Top ups", "Items", "Boosting"] as const;
 
 function DropdownItem({ label }: { label: string }) {
+  const copy = useThemeCopy();
+
   return (
     <button type="button" className="header-dropdown">
-      <span className="header-dropdown__label">{label}</span>
+      <span className="header-dropdown__label">{copy(label)}</span>
       <span className="header-dropdown__chevron" aria-hidden="true">
         <img src={signRightIcon} alt="" className="header-icon" />
       </span>
@@ -26,8 +29,10 @@ function DropdownItem({ label }: { label: string }) {
 }
 
 function IconButton({ icon, label }: { icon: string; label: string }) {
+  const copy = useThemeCopy();
+
   return (
-    <button type="button" className="header-icon-button" aria-label={label}>
+    <button type="button" className="header-icon-button" aria-label={copy(label)}>
       <img src={icon} alt="" className="header-icon" />
     </button>
   );
@@ -35,13 +40,14 @@ function IconButton({ icon, label }: { icon: string; label: string }) {
 
 export function Header() {
   const { theme, setTheme } = useTheme();
+  const copy = useThemeCopy();
 
   return (
     <header className="header">
       <div className="header-secondary">
         <div className="header-secondary__support">
           <img src={supportIcon} alt="" className="header-secondary__support-icon header-icon" />
-          <span>24/7 human support</span>
+          <span>{copy("24/7 human support")}</span>
         </div>
 
         <div className="header-secondary__actions">
@@ -89,27 +95,42 @@ export function Header() {
                 🐱
               </span>
             </button>
+            <button
+              type="button"
+              className={`header-theme-switch__button header-theme-switch__button--uwu${theme === "uwu" ? " header-theme-switch__button--active" : ""}`}
+              aria-label="Uwu mode"
+              aria-pressed={theme === "uwu"}
+              onClick={() => setTheme("uwu")}
+            >
+              <span className="header-theme-switch__uwu-icon" aria-hidden="true">
+                uwu
+              </span>
+            </button>
           </div>
         </div>
       </div>
 
       <div className="header-primary">
         <div className="header-primary__menu">
-          <a href="/" className="header-logo" aria-label="Eldorado home">
-            <img src={logo} alt="Eldorado" />
+          <a href="/" className="header-logo" aria-label={copy("Eldorado home")}>
+            <img src={logo} alt={copy("Eldorado")} />
           </a>
 
-          <nav className="header-nav" aria-label="Main">
+          <nav className="header-nav" aria-label={copy("Main")}>
             {NAV_ITEMS.map((item) => (
               <a key={item} href="#" className="header-nav__link">
-                {item}
+                {copy(item)}
               </a>
             ))}
           </nav>
 
           <label className="header-search">
             <img src={searchIcon} alt="" className="header-search__icon header-icon" />
-            <input type="search" placeholder="Search Eldorado" aria-label="Search Eldorado" />
+            <input
+              type="search"
+              placeholder={copy("Search Eldorado")}
+              aria-label={copy("Search Eldorado")}
+            />
           </label>
         </div>
 
@@ -117,7 +138,7 @@ export function Header() {
           <IconButton icon={switchIcon} label="Activity" />
           <IconButton icon={messageIcon} label="Messages" />
           <IconButton icon={notificationIcon} label="Notifications" />
-          <button type="button" className="header-avatar" aria-label="User profile">
+          <button type="button" className="header-avatar" aria-label={copy("User profile")}>
             <img src={userAvatar} alt="" />
           </button>
         </div>

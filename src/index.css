@@ -63,6 +63,34 @@
   --shadow-header: 0 2px 2px rgba(9, 9, 11, 0.05), 0 12px 4px rgba(9, 9, 11, 0.02);
 }
 
+[data-theme="uwu"] {
+  --color-bg-body: #fef6ff;
+  --color-bg-base: #fffafd;
+  --color-bg-alt: #f5f0ff;
+  --color-card-bg: #fff8fc;
+  --color-text-primary: #7c6b9e;
+  --color-text-secondary: #b39cd0;
+  --color-border: #e8d4ff;
+  --color-border-alt: #ffd6e8;
+  --color-border-hover: #ffc4de;
+  --color-input-stroke: #ecd9ff;
+  --color-input-bg: #fff9fd;
+  --color-input-placeholder: #c9a8e0;
+  --color-tab-active: #ffb7d5;
+  --color-brand-yellow: #ffd4a3;
+  --color-brand-yellow-16: rgba(255, 183, 213, 0.28);
+  --color-theme-switch-active-bg: rgba(255, 183, 213, 0.32);
+  --color-price: #8b6fd6;
+  --color-price-badge-bg: rgba(200, 220, 255, 0.55);
+  --color-chip-text: #7c6b9e;
+  --color-check-on-yellow: #7c6b9e;
+  --color-page-bg: #eef4ff;
+  --color-missing-bg: #ffe8f3;
+  --color-missing-text: #c9a8e0;
+  --shadow-card: 0 2px 10px rgba(255, 183, 213, 0.16), 0 8px 20px rgba(184, 169, 232, 0.18);
+  --shadow-header: 0 2px 10px rgba(255, 183, 213, 0.18), 0 8px 18px rgba(184, 169, 232, 0.14);
+}
+
 [data-theme="unicorn"] {
   --color-bg-body: #ffe8f4;
   --color-bg-base: #fff0f8;
@@ -185,6 +213,18 @@ body {
   --footer-bg: #7a1568;
   --footer-text: #fff5fb;
   --footer-muted: #ffb8e8;
+}
+
+[data-theme="uwu"] body {
+  background: linear-gradient(135deg, #eef4ff 0%, #fef6ff 40%, #fff0f5 75%, #eef4ff 100%);
+  background-size: 200% 200%;
+  animation: unicorn-shimmer 14s ease infinite;
+}
+
+[data-theme="uwu"] .eldorado-footer {
+  --footer-bg: #8b7bb8;
+  --footer-text: #fffafd;
+  --footer-muted: #ffd6e8;
 }
 
 #root {

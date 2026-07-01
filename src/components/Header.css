@@ -141,6 +141,19 @@
   box-shadow: 0 0 8px rgba(255, 153, 51, 0.4);
 }
 
+.header-theme-switch__button--uwu {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-secondary);
+}
+
+[data-theme="uwu"] .header-theme-switch__button--uwu.header-theme-switch__button--active {
+  background: rgba(255, 183, 213, 0.35);
+  box-shadow: 0 0 8px rgba(184, 169, 232, 0.45);
+  color: #7c6b9e;
+}
+
 [data-theme="dark"] .header-icon {
   filter: brightness(0) invert(0.92);
 }

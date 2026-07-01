@@ -2,6 +2,7 @@ import "./ProductNavigation.css";
 
 import genshinImpactIcon from "./assets/product-navigation/genshin-impact.png";
 import tabActiveBg from "./assets/product-navigation/tab-active-bg.svg";
+import { useThemeCopy } from "./theme/useThemeCopy";
 
 const TABS = [
   { label: "Accounts", active: false },
@@ -10,8 +11,10 @@ const TABS = [
 ] as const;
 
 export function ProductNavigation() {
+  const copy = useThemeCopy();
+
   return (
-    <nav className="product-navigation" aria-label="Product">
+    <nav className="product-navigation" aria-label={copy("Product")}>
       <div className="product-navigation__inner">
         <div className="product-navigation__game">
           <img
@@ -19,7 +22,9 @@ export function ProductNavigation() {
             alt=""
             className="product-navigation__game-icon"
           />
-          <span className="product-navigation__game-title">Genshin Impact top ups</span>
+          <span className="product-navigation__game-title">
+            {copy("Genshin Impact top ups")}
+          </span>
         </div>
 
         <div className="product-navigation__tabs" role="tablist">
@@ -36,7 +41,7 @@ export function ProductNavigation() {
                   <img src={tabActiveBg} alt="" />
                 </span>
               )}
-              {label}
+              {copy(label)}
             </a>
           ))}
         </div>

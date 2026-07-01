@@ -29,9 +29,9 @@
 .eldorado-footer__payments {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .eldorado-footer__payment-icon {

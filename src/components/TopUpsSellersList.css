@@ -1,0 +1,338 @@
+.top-ups-sellers {
+  --text-primary: #14131a;
+  --text-secondary: #6a667b;
+  --text-link: #2d5ead;
+  --text-grey: #626362;
+  --background-base1: #ffffff;
+  --background-alt1: #f4f4f4;
+  --background-base3: #efeff1;
+  --button-primary-bg: #222127;
+  --chip-price-bg: rgba(209, 240, 143, 0.2);
+  --chip-price-text: #367506;
+  --brand-yellow: #ffc950;
+  --divider-border: #e7e7e7;
+  --shadow-card:
+    0 2px 2px rgba(9, 9, 11, 0.05),
+    0 12px 4px rgba(9, 9, 11, 0.02);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 0 24px;
+  font-family: "Lato", system-ui, sans-serif;
+  color: var(--text-primary);
+}
+
+.top-ups-sellers__title {
+  margin: 0;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.top-ups-sellers__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.top-ups-sellers__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.top-ups-sellers__row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--background-base1);
+}
+
+.top-ups-sellers__row--expanded {
+  border-bottom: 1px solid var(--divider-border);
+}
+
+.top-ups-sellers__seller {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.top-ups-sellers__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.top-ups-sellers__seller-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.top-ups-sellers__username-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.top-ups-sellers__username {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.top-ups-sellers__badge {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.top-ups-sellers__stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.top-ups-sellers__feedback {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.top-ups-sellers__reviews {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-link);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.top-ups-sellers__delivery {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.top-ups-sellers__label {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.top-ups-sellers__value {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.top-ups-sellers__pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.top-ups-sellers__original-price {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+}
+
+.top-ups-sellers__price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-ups-sellers__discount-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--chip-price-bg);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--chip-price-text);
+}
+
+.top-ups-sellers__current-price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--chip-price-text);
+  text-align: right;
+}
+
+.top-ups-sellers__buy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 12px 16px;
+  border: 1px solid var(--button-primary-bg);
+  border-radius: 8px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--button-primary-bg);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.top-ups-sellers__instructions-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.top-ups-sellers__instructions-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 24px 24px 82px;
+  background: var(--background-base1);
+}
+
+.top-ups-sellers__instructions-title {
+  margin: 0;
+  max-width: 800px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.top-ups-sellers__instructions-text {
+  margin: 0;
+  max-width: 800px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  white-space: pre-line;
+}
+
+.top-ups-sellers__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.top-ups-sellers__pages {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.top-ups-sellers__page-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--background-alt1);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.top-ups-sellers__page-button--active {
+  background: var(--brand-yellow);
+}
+
+.top-ups-sellers__page-button--icon {
+  padding: 9px;
+}
+
+.top-ups-sellers__page-button:disabled {
+  cursor: default;
+}
+
+.top-ups-sellers__go-to-page {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--text-secondary);
+}
+
+.top-ups-sellers__page-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 73px;
+  height: 42px;
+  padding: 8px 4px 8px 12px;
+  background: var(--background-base3);
+}
+
+.top-ups-sellers__page-select select {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--text-grey);
+  cursor: pointer;
+}
+
+.top-ups-sellers__page-select img {
+  flex-shrink: 0;
+  pointer-events: none;
+}

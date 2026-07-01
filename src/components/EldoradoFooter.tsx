@@ -2,6 +2,7 @@ import "./EldoradoFooter.css";
 
 import { footerIcons } from "./icons/footerIcons";
 import { SvgIcon } from "./icons/SvgIcon";
+import { useThemeCopy } from "./theme/useThemeCopy";
 
 const PAYMENT_METHODS = [
   { name: "Visa", svg: footerIcons.payment.visa },
@@ -50,40 +51,51 @@ const POLICY_LINKS = [
 const LEGAL_LINKS = ["Terms of Service", "Privacy Policy", "DMCA"] as const;
 
 export function EldoradoFooter() {
+  const copy = useThemeCopy();
+
   return (
     <footer className="eldorado-footer">
       <div className="eldorado-footer__container">
-        <div className="eldorado-footer__payments" aria-label="Accepted payment methods">
+        <div className="eldorado-footer__payments" aria-label={copy("Accepted payment methods")}>
           {PAYMENT_METHODS.map((method) => (
             <SvgIcon
               key={method.name}
               className="eldorado-footer__payment-icon"
               svg={method.svg}
-              label={method.name}
+              label={copy(method.name)}
             />
           ))}
-          <span className="eldorado-footer__payments-more">+ 15 more</span>
+          <span className="eldorado-footer__payments-more">{copy("+ 15 more")}</span>
         </div>
 
         <div className="eldorado-footer__content">
           <div className="eldorado-footer__brand">
-            <div className="eldorado-footer__logo" aria-label="Eldorado">
+            <div className="eldorado-footer__logo" aria-label={copy("Eldorado")}>
               <SvgIcon className="eldorado-footer__logo-icon" svg={footerIcons.logo.icon} />
-              <SvgIcon className="eldorado-footer__logo-text" svg={footerIcons.logo.text} label="Eldorado" />
+              <SvgIcon
+                className="eldorado-footer__logo-text"
+                svg={footerIcons.logo.text}
+                label={copy("Eldorado")}
+              />
             </div>
             <p className="eldorado-footer__tagline">
-              Join us today to level up your gaming experience!
+              {copy("Join us today to level up your gaming experience!")}
             </p>
-            <div className="eldorado-footer__socials" aria-label="Social media links">
+            <div className="eldorado-footer__socials" aria-label={copy("Social media links")}>
               {SOCIAL_LINKS.map((social) => (
-                <a key={social.name} className="eldorado-footer__social-link" href="#" aria-label={social.name}>
+                <a
+                  key={social.name}
+                  className="eldorado-footer__social-link"
+                  href="#"
+                  aria-label={copy(social.name)}
+                >
                   <SvgIcon svg={social.svg} />
                 </a>
               ))}
             </div>
           </div>
 
-          <nav className="eldorado-footer__links" aria-label="Footer navigation">
+          <nav className="eldorado-footer__links" aria-label={copy("Footer navigation")}>
             <ul className="eldorado-footer__link-column">
               {HELP_LINKS.map((link) => (
                 <li key={link.label}>
@@ -91,7 +103,7 @@ export function EldoradoFooter() {
                     className={`eldorado-footer__link${link.active ? " eldorado-footer__link--active" : ""}`}
                     href="#"
                   >
-                    {link.label}
+                    {copy(link.label)}
                   </a>
                 </li>
               ))}
@@ -100,7 +112,7 @@ export function EldoradoFooter() {
               {WARRANTY_LINKS.map((label) => (
                 <li key={label}>
                   <a className="eldorado-footer__link" href="#">
-                    {label}
+                    {copy(label)}
                   </a>
                 </li>
               ))}
@@ -109,7 +121,7 @@ export function EldoradoFooter() {
               {POLICY_LINKS.map((label) => (
                 <li key={label}>
                   <a className="eldorado-footer__link" href="#">
-                    {label}
+                    {copy(label)}
                   </a>
                 </li>
               ))}
@@ -120,12 +132,14 @@ export function EldoradoFooter() {
 
       <div className="eldorado-footer__copyright">
         <p className="eldorado-footer__copyright-text">
-          © 2024 Eldorado Market. The eldorado.gg website is owned and operated by Eldorado Market, UAB.
+          {copy(
+            "© 2024 Eldorado Market. The eldorado.gg website is owned and operated by Eldorado Market, UAB.",
+          )}
         </p>
         <div className="eldorado-footer__legal-links">
           {LEGAL_LINKS.map((label) => (
             <a key={label} className="eldorado-footer__legal-link" href="#">
-              {label}
+              {copy(label)}
             </a>
           ))}
         </div>

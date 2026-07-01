@@ -15,23 +15,22 @@
   color: var(--color-text-primary);
 }
 
-.game-region-selector__options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: flex-start;
+.game-region-selector__control {
+  position: relative;
   width: 100%;
 }
 
-.game-region-chip {
-  display: inline-flex;
+.game-region-selector__trigger {
+  display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
   height: 32px;
   padding: 4px 8px;
   border: 1px solid var(--color-border-alt);
   border-radius: 4px;
-  background: transparent;
+  background: var(--color-input-bg);
   cursor: pointer;
   font-family: "Lato", system-ui, sans-serif;
   font-size: 14px;
@@ -40,22 +39,87 @@
   color: var(--color-chip-text);
 }
 
-.game-region-chip:hover {
+.game-region-selector__trigger:hover,
+.game-region-selector__trigger--open {
   border-color: var(--color-border-hover);
 }
 
-.game-region-chip--selected {
+.game-region-selector__trigger-label {
+  padding: 0 4px;
+  white-space: nowrap;
+}
+
+.game-region-selector__chevron {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.game-region-selector__chevron img {
+  width: 16px;
+  height: 16px;
+  transform: rotate(90deg);
+  transition: transform 0.15s ease;
+}
+
+.game-region-selector__trigger--open .game-region-selector__chevron img {
+  transform: rotate(-90deg);
+}
+
+.game-region-selector__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--color-border-alt);
+  border-radius: 4px;
+  background: var(--color-input-bg);
+  box-shadow: var(--shadow-card);
+}
+
+.game-region-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  height: 32px;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Lato", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-chip-text);
+  text-align: left;
+}
+
+.game-region-option:hover {
+  border-color: var(--color-border-hover);
+}
+
+.game-region-option--selected {
   border: 2px solid var(--color-brand-yellow);
   background: var(--color-brand-yellow-16);
   font-weight: 700;
 }
 
-.game-region-chip__icon {
+.game-region-option__icon {
   flex-shrink: 0;
   color: var(--color-chip-text);
 }
 
-.game-region-chip__label {
+.game-region-option__label {
   padding: 0 4px;
   white-space: nowrap;
 }

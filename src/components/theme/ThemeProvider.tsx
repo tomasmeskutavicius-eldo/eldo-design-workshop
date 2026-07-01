@@ -6,9 +6,12 @@ import {
   type ReactNode,
 } from "react";
 
-export type Theme = "light" | "dark" | "unicorn" | "cat";
+import { uwuify } from "./uwuify";
+
+export type Theme = "light" | "dark" | "unicorn" | "cat" | "uwu";
 
 const STORAGE_KEY = "eldo-theme";
+const DEFAULT_PAGE_TITLE = "Eldorado — Genshin Impact Top Ups";
 
 type ThemeContextValue = {
   theme: Theme;
@@ -19,7 +22,7 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function getInitialTheme(): Theme {
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark" || stored === "unicorn" || stored === "cat") {
+  if (stored === "light" || stored === "dark" || stored === "unicorn" || stored === "cat" || stored === "uwu") {
     return stored;
   }
 
@@ -32,6 +35,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem(STORAGE_KEY, theme);
+    document.title = theme === "uwu" ? uwuify(DEFAULT_PAGE_TITLE) : DEFAULT_PAGE_TITLE;
   }, [theme]);
 
   return (
