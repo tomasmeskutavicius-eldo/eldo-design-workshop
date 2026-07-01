@@ -1,4 +1,5 @@
 import { AmountSelector } from "./AmountSelector";
+import { CardDescription } from "./CardDescription";
 import { GameRegionSelector } from "./GameRegionSelector";
 import "./Main.css";
 
@@ -28,7 +29,7 @@ export function Main() {
 
           <aside className="main__sidebar">
             <MissingComponent label="component missing" className="main__missing--checkout" />
-            <MissingComponent label="component missing" className="main__missing--seller" />
+            <CardDescription />
           </aside>
         </div>
 
