@@ -1,9 +1,13 @@
+import { GameRegionSelector } from "./GameRegionSelector";
 import "./Main.css";
 
 export function Main() {
   return (
     <main>
-      <p>React app with a components folder.</p>
+      <GameRegionSelector
+        defaultValue="EU"
+        onChange={(region) => console.log(region)}
+      />
     </main>
   );
 }

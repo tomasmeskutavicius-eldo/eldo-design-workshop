@@ -1,0 +1,61 @@
+.game-region-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.game-region-selector__label {
+  margin: 0;
+  font-family: "Lato", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #14131a;
+}
+
+.game-region-selector__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.game-region-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 4px 8px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Lato", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #14131a;
+}
+
+.game-region-chip:hover {
+  border-color: #d0d0d0;
+}
+
+.game-region-chip--selected {
+  border: 2px solid #ffc950;
+  background: rgba(255, 201, 80, 0.16);
+  font-weight: 700;
+}
+
+.game-region-chip__icon {
+  flex-shrink: 0;
+  color: #14131a;
+}
+
+.game-region-chip__label {
+  padding: 0 4px;
+  white-space: nowrap;
+}
