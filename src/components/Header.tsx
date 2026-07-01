@@ -67,6 +67,17 @@ export function Header() {
             >
               <img src={moonIcon} alt="" />
             </button>
+            <button
+              type="button"
+              className={`header-theme-switch__button header-theme-switch__button--unicorn${theme === "unicorn" ? " header-theme-switch__button--active" : ""}`}
+              aria-label="Unicorn mode"
+              aria-pressed={theme === "unicorn"}
+              onClick={() => setTheme("unicorn")}
+            >
+              <span className="header-theme-switch__unicorn-icon" aria-hidden="true">
+                🦄
+              </span>
+            </button>
           </div>
         </div>
       </div>

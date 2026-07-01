@@ -111,6 +111,21 @@
   height: 20px;
 }
 
+.header-theme-switch__button--unicorn {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.header-theme-switch__unicorn-icon {
+  display: block;
+  transform: scale(0.95);
+}
+
+[data-theme="unicorn"] .header-theme-switch__button--unicorn.header-theme-switch__button--active {
+  background: rgba(255, 105, 180, 0.28);
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.45);
+}
+
 [data-theme="dark"] .header-icon {
   filter: brightness(0) invert(0.92);
 }

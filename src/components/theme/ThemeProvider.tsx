@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from "react";
 
-export type Theme = "light" | "dark";
+export type Theme = "light" | "dark" | "unicorn";
 
 const STORAGE_KEY = "eldo-theme";
 
@@ -19,7 +19,7 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function getInitialTheme(): Theme {
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") {
+  if (stored === "light" || stored === "dark" || stored === "unicorn") {
     return stored;
   }
 
